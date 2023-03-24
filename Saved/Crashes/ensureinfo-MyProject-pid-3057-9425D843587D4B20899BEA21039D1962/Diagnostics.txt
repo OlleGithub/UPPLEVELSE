@@ -1,0 +1,67 @@
+Generating report for minidump
+
+Application version 4.26.2.0
+ ... built from changelist 0
+
+OS version Linux 6.0.2-arch1-1 (network name: olle)
+Running 6 x86_64 processors (6 logical cores)
+Exception was "Ensure condition failed: false [File:/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/Misc/PackageName.cpp] [Line: 1008]"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUE4Editor-Core.so!FUnixPlatformStackWalk::CaptureStackBackTrace(unsigned long long*, unsigned int, void*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Unix/UnixPlatformStackWalk.cpp:693]
+libUE4Editor-Core.so!FGenericPlatformStackWalk::StackWalkAndDump(char*, unsigned long, int, void*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/GenericPlatform/GenericPlatformStackWalk.cpp:178]
+libUE4Editor-Core.so!FUnixCrashContext::CaptureStackTrace() [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Unix/UnixPlatformCrashContext.cpp:288]
+libUE4Editor-Core.so!ReportEnsure(char16_t const*, int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Unix/UnixPlatformStackWalk.cpp:900]
+libUE4Editor-Core.so!FDebug::EnsureFailed(char const*, char const*, int, char16_t const*, int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Misc/AssertionMacros.cpp:428]
+libUE4Editor-Core.so!FDebug::OptionallyLogFormattedEnsureMessageReturningFalseImpl(bool, char const*, char const*, int, char16_t const*, ...) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Misc/AssertionMacros.cpp:494]
+libUE4Editor-CoreUObject.so!FPackageName::DoesPackageExist(FString const&, FGuid const*, FString*, bool)::$_64::operator()() const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/Misc/PackageName.cpp:1008]
+libUE4Editor-CoreUObject.so!FPackageName::DoesPackageExist(FString const&, FGuid const*, FString*, bool) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/Misc/PackageName.cpp:1008]
+libUE4Editor-CoreUObject.so!UPackage::IsFullyLoaded() const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/Package.cpp:239]
+libUE4Editor-CoreUObject.so!FLinkerLoad::VerifyImportInner(int, FString&)::$_111::operator()(FObjectImport&, TOptional<FScopedSlowTask>&) const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:3072]
+libUE4Editor-CoreUObject.so!FLinkerLoad::VerifyImportInner(int, FString&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:3126]
+libUE4Editor-CoreUObject.so!FLinkerLoad::VerifyImport(int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:2790]
+libUE4Editor-CoreUObject.so!FLinkerLoad::VerifyImportInner(int, FString&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:3151]
+libUE4Editor-CoreUObject.so!FLinkerLoad::VerifyImport(int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:2790]
+libUE4Editor-CoreUObject.so!FLinkerLoad::VerifyImportInner(int, FString&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:3151]
+libUE4Editor-CoreUObject.so!FLinkerLoad::VerifyImport(int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:2790]
+libUE4Editor-CoreUObject.so!FLinkerLoad::Verify() [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:2573]
+libUE4Editor-CoreUObject.so!FLinkerLoad::FinalizeCreation(TMap<TTuple<FName, FPackageIndex>, FPackageIndex, FDefaultSetAllocator, TDefaultMapHashableKeyFuncs<TTuple<FName, FPackageIndex>, FPackageIndex, false> >*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:2400]
+libUE4Editor-CoreUObject.so!FLinkerLoad::Tick(float, bool, bool, TMap<TTuple<FName, FPackageIndex>, FPackageIndex, FDefaultSetAllocator, TDefaultMapHashableKeyFuncs<TTuple<FName, FPackageIndex>, FPackageIndex, false> >*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:808]
+libUE4Editor-CoreUObject.so!FLinkerLoad::CreateLinker(FUObjectSerializeContext*, UPackage*, char16_t const*, unsigned int, FArchive*, FLinkerInstancingContext const*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/LinkerLoad.cpp:470]
+libUE4Editor-CoreUObject.so!GetPackageLinker(UPackage*, char16_t const*, unsigned int, UPackageMap*, FGuid*, FArchive*, FUObjectSerializeContext**, FLinkerLoad*, FLinkerInstancingContext const*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/Linker.cpp:815]
+libUE4Editor-CoreUObject.so!LoadPackageInternal(UPackage*, char16_t const*, unsigned int, FLinkerLoad*, FArchive*, FLinkerInstancingContext const*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/UObjectGlobals.cpp:1234]
+libUE4Editor-CoreUObject.so!LoadPackage(UPackage*, char16_t const*, unsigned int, FArchive*, FLinkerInstancingContext const*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/UObjectGlobals.cpp:1458]
+libUE4Editor-CoreUObject.so!ResolveName(UObject*&, FString&, bool, bool, unsigned int, FLinkerInstancingContext const*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/UObjectGlobals.cpp:787]
+libUE4Editor-CoreUObject.so!StaticLoadObjectInternal(UClass*, UObject*, char16_t const*, char16_t const*, unsigned int, UPackageMap*, bool, FLinkerInstancingContext const*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/UObjectGlobals.cpp:848]
+libUE4Editor-CoreUObject.so!StaticLoadObject(UClass*, UObject*, char16_t const*, char16_t const*, unsigned int, UPackageMap*, bool, FLinkerInstancingContext const*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Private/UObject/UObjectGlobals.cpp:924]
+libUE4Editor-ContentBrowserAssetDataSource.so!FAssetData::GetAsset() const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/CoreUObject/Public/AssetRegistry/AssetData.h:356]
+libUE4Editor-ContentBrowserAssetDataSource.so!ContentBrowserAssetData::EditOrPreviewAssetFileItems(TArrayView<TSharedRef<FContentBrowserAssetFileItemDataPayload const, (ESPMode)0> const, int>, bool) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Plugins/Editor/ContentBrowser/ContentBrowserAssetDataSource/Source/ContentBrowserAssetDataSource/Private/ContentBrowserAssetDataCore.cpp:276]
+libUE4Editor-ContentBrowserAssetDataSource.so!ContentBrowserAssetData::EditOrPreviewItems(IAssetTools*, UContentBrowserDataSource const*, TArrayView<FContentBrowserItemData const, int>, bool) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Plugins/Editor/ContentBrowser/ContentBrowserAssetDataSource/Source/ContentBrowserAssetDataSource/Private/ContentBrowserAssetDataCore.cpp:307]
+libUE4Editor-ContentBrowser.so!SContentBrowser::OnItemsActivated(TArrayView<FContentBrowserItem const, int>, EAssetTypeActivationMethod::Type) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Editor/ContentBrowser/Private/SContentBrowser.cpp:2255]
+libUE4Editor-ContentBrowser.so!TBaseSPMethodDelegateInstance<false, SContentBrowser, (ESPMode)0, void (TArrayView<FContentBrowserItem const, int>, EAssetTypeActivationMethod::Type), FDefaultDelegateUserPolicy>::Execute(TArrayView<FContentBrowserItem const, int>, EAssetTypeActivationMethod::Type) const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImpl.h:290]
+libUE4Editor-ContentBrowser.so!decltype(auto) UE4Tuple_Private::TTupleBase<TIntegerSequence<unsigned int> >::ApplyAfter<void (SAssetView::* const&)(TSharedPtr<FAssetViewItem, (ESPMode)0>), SAssetView*&, TSharedPtr<FAssetViewItem, (ESPMode)0>&>(void (SAssetView::* const&&&)(TSharedPtr<FAssetViewItem, (ESPMode)0>), SAssetView*&&&, TSharedPtr<FAssetViewItem, (ESPMode)0>&&&) const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Public/Templates/Tuple.h:299]
+libUE4Editor-ContentBrowser.so!TBaseSPMethodDelegateInstance<false, SAssetView, (ESPMode)0, void (TSharedPtr<FAssetViewItem, (ESPMode)0>), FDefaultDelegateUserPolicy>::ExecuteIfSafe(TSharedPtr<FAssetViewItem, (ESPMode)0>) const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Public/Delegates/DelegateInstancesImpl.h:307]
+libUE4Editor-ContentBrowser.so!bool TDelegate<void (TSharedPtr<FAssetViewItem, (ESPMode)0>), FDefaultDelegateUserPolicy>::ExecuteIfBound<void, (void*)0>(TSharedPtr<FAssetViewItem, (ESPMode)0>) const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Public/Delegates/DelegateSignatureImpl.inl:599]
+libUE4Editor-ContentBrowser.so!SListView<TSharedPtr<FAssetViewItem, (ESPMode)0> >::Private_OnItemDoubleClicked(TSharedPtr<FAssetViewItem, (ESPMode)0>) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Slate/Public/Widgets/Views/SListView.h:1074]
+libUE4Editor-ContentBrowser.so!STableRow<TSharedPtr<FAssetViewItem, (ESPMode)0> >::OnMouseButtonDoubleClick(FGeometry const&, FPointerEvent const&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Slate/Public/Widgets/Views/STableRow.h:457]
+libUE4Editor-ContentBrowser.so!non-virtual thunk to STableRow<TSharedPtr<FAssetViewItem, (ESPMode)0> >::OnMouseButtonDoubleClick(FGeometry const&, FPointerEvent const&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Slate/Public/Widgets/Views/STableRow.h:0]
+libUE4Editor-Slate.so!FSlateApplication::RoutePointerDoubleClickEvent(FWidgetPath const&, FPointerEvent const&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5281]
+libUE4Editor-Slate.so!FSlateApplication::ProcessMouseButtonDoubleClickEvent(TSharedPtr<FGenericWindow, (ESPMode)0> const&, FPointerEvent const&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5266]
+libUE4Editor-Slate.so!FSlateApplication::OnMouseDoubleClick(TSharedPtr<FGenericWindow, (ESPMode)0> const&, EMouseButtons::Type, FVector2D) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Slate/Private/Framework/Application/SlateApplication.cpp:5231]
+libUE4Editor-ApplicationCore.so!FLinuxApplication::ProcessDeferredMessage(SDL_Event) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/ApplicationCore/Private/Linux/LinuxApplication.cpp:393]
+libUE4Editor-ApplicationCore.so!FLinuxPlatformApplicationMisc::PumpMessages(bool) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/ApplicationCore/Private/Linux/LinuxPlatformApplicationMisc.cpp:428]
+UE4Editor!FEngineLoop::Tick() [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Launch/Private/LaunchEngineLoop.cpp:4748]
+UE4Editor!GuardedMain(char16_t const*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Launch/Private/Launch.cpp:171]
+libUE4Editor-UnixCommonStartup.so!CommonUnixMain(int, char**, int (*)(char16_t const*), void (*)()) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Unix/UnixCommonStartup/Private/UnixCommonStartup.cpp:264]
+libc.so.6!UnknownFunction(0x2328f)
+libc.so.6!__libc_start_main(+0x89)
+UE4Editor!_start()
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!

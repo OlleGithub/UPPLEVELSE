@@ -1,0 +1,57 @@
+Generating report for minidump
+
+Application version 4.26.2.0
+ ... built from changelist 0
+
+OS version Linux 6.0.2-arch1-1 (network name: olle)
+Running 6 x86_64 processors (6 logical cores)
+Exception was "Ensure condition failed: IsInGameThread() || IsInAsyncLoadingThread() [File:Editor/UnrealEd/Public/TickableEditorObject.h] [Line: 83]"
+
+<SOURCE START>
+<SOURCE END>
+
+<CALLSTACK START>
+libUE4Editor-Core.so!FUnixPlatformStackWalk::CaptureStackBackTrace(unsigned long long*, unsigned int, void*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Unix/UnixPlatformStackWalk.cpp:693]
+libUE4Editor-Core.so!FGenericPlatformStackWalk::StackWalkAndDump(char*, unsigned long, int, void*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/GenericPlatform/GenericPlatformStackWalk.cpp:178]
+libUE4Editor-Core.so!FUnixCrashContext::CaptureStackTrace() [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Unix/UnixPlatformCrashContext.cpp:288]
+libUE4Editor-Core.so!ReportEnsure(char16_t const*, int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Unix/UnixPlatformStackWalk.cpp:900]
+libUE4Editor-Core.so!FDebug::EnsureFailed(char const*, char const*, int, char16_t const*, int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Misc/AssertionMacros.cpp:428]
+libUE4Editor-Core.so!FDebug::OptionallyLogFormattedEnsureMessageReturningFalseImpl(bool, char const*, char const*, int, char16_t const*, ...) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Misc/AssertionMacros.cpp:494]
+libUE4Editor-Engine.so!FTickableEditorObject::~FTickableEditorObject()::'lambda1'()::operator()() const [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Editor/UnrealEd/Public/TickableEditorObject.h:83]
+libUE4Editor-Engine.so!FTickableEditorObject::~FTickableEditorObject() [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Editor/UnrealEd/Public/TickableEditorObject.h:83]
+libc.so.6!UnknownFunction(0x3afa4)
+libc.so.6!exit(+0x1f)
+libX11.so.6!_XDefaultIOError(+0x65)
+libX11.so.6!_XIOError(+0x62)
+libX11.so.6!_XEventsQueued(+0x86)
+libX11.so.6!XFlush(+0x1e)
+libUE4Editor-ApplicationCore.so!X11_ConfineCursor [/SDL-gui-backend/src/video/x11/SDL_x11xfixes.c:184]
+libUE4Editor-ApplicationCore.so!UngrabAllInputImpl() [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/ApplicationCore/Private/Linux/LinuxPlatformApplicationMisc.cpp:241]
+libUE4Editor-Core.so!PlatformCrashHandler(int, siginfo_t*, void*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Unix/UnixPlatformCrashContext.cpp:841]
+libc.so.6!UnknownFunction(0x389ff)
+libUE4Editor-Core.so!FGenericPlatformMisc::RaiseException(unsigned int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/GenericPlatform/GenericPlatformMisc.cpp:465]
+libUE4Editor-Core.so!FOutputDevice::LogfImpl(char16_t const*, ...) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Misc/OutputDevice.cpp:61]
+libUE4Editor-VulkanRHI.so!VulkanRHI::VerifyVulkanResult(VkResult, char const*, char const*, unsigned int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/VulkanRHI/Private/VulkanUtil.cpp:802]
+libUE4Editor-VulkanRHI.so!FVulkanSwapChain::FVulkanSwapChain(VkInstance_T*, FVulkanDevice&, void*, EPixelFormat&, unsigned int, unsigned int, bool, unsigned int*, TArray<VkImage_T*, TSizedDefaultAllocator<32> >&, signed char, FVulkanSwapChainRecreateInfo*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/VulkanRHI/Private/VulkanSwapChain.cpp:179]
+libUE4Editor-VulkanRHI.so!FVulkanViewport::CreateSwapchain(FVulkanSwapChainRecreateInfo*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/VulkanRHI/Private/VulkanViewport.cpp:627]
+libUE4Editor-VulkanRHI.so!FVulkanViewport::RecreateSwapchain(void*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/VulkanRHI/Private/VulkanViewport.cpp:576]
+libUE4Editor-VulkanRHI.so!FVulkanViewport::DoCheckedSwapChainJob(TFunction<int (FVulkanViewport*)>) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/VulkanRHI/Private/VulkanViewport.cpp:209]
+libUE4Editor-VulkanRHI.so!FVulkanViewport::Present(FVulkanCommandListContext*, FVulkanCmdBuffer*, FVulkanQueue*, FVulkanQueue*, bool) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/VulkanRHI/Private/VulkanViewport.cpp:920]
+libUE4Editor-VulkanRHI.so!FVulkanCommandListContext::RHIEndDrawingViewport(FRHIViewport*, bool, bool) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/VulkanRHI/Private/VulkanRHI.cpp:889]
+libUE4Editor-RHI.so!FRHICommand<FRHICommandEndDrawingViewport, FRHICommandEndDrawingViewportString1847>::ExecuteAndDestruct(FRHICommandListBase&, FRHICommandListDebugContext&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/RHI/Public/RHICommandList.h:763]
+libUE4Editor-RHI.so!FRHICommandListExecutor::ExecuteInner_DoExecute(FRHICommandListBase&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/RHI/Private/RHICommandList.cpp:373]
+libUE4Editor-RHI.so!FExecuteRHIThreadTask::DoTask(ENamedThreads::Type, TRefCountPtr<FGraphEvent> const&) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/RHI/Private/RHICommandList.cpp:428]
+libUE4Editor-RHI.so!TGraphTask<FExecuteRHIThreadTask>::ExecuteTask(TArray<FBaseGraphTask*, TSizedDefaultAllocator<32> >&, ENamedThreads::Type) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Public/Async/TaskGraphInterfaces.h:886]
+libUE4Editor-Core.so!FNamedTaskThread::ProcessTasksNamedThread(int, bool) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Async/TaskGraph.cpp:709]
+libUE4Editor-Core.so!FNamedTaskThread::ProcessTasksUntilQuit(int) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/Async/TaskGraph.cpp:600]
+libUE4Editor-RenderCore.so!FRHIThread::Run() [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/RenderCore/Private/RenderingThread.cpp:319]
+libUE4Editor-Core.so!FRunnableThreadPThread::Run() [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/HAL/PThreadRunnableThread.cpp:25]
+libUE4Editor-Core.so!FRunnableThreadPThread::_ThreadProc(void*) [/home/olle/Programs/GameEngines/UnrealEngine-4.26/Engine/Source/Runtime/Core/Private/HAL/PThreadRunnableThread.h:185]
+libc.so.6!UnknownFunction(0x868fc)
+libc.so.6!UnknownFunction(0x108a5f)
+
+<CALLSTACK END>
+
+0 loaded modules
+
+Report end!
